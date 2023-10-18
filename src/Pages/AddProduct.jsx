@@ -36,7 +36,7 @@ const AddProduct = () => {
             </div>
             <div className="card p-0 flex-shrink-0 w-4/5  shadow-2xl bg-base-100">
               <form onSubmit={handleAddProduct} className="card-body  ">
-                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                <div className=" grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                   <div className="form-control sm:col-span-3">
                     <label className="label">
                       <span className="label-text"> Name </span>
@@ -44,32 +44,19 @@ const AddProduct = () => {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Enter Coffee Name"
+                      placeholder="Enter Product Name"
                       className="input input-bordered"
                       required
                     />
                   </div>
                   <div className="form-control sm:col-span-3">
                     <label className="label">
-                      <span className="label-text">Chef</span>
+                      <span className="label-text"> Product Image </span>
                     </label>
                     <input
                       type="text"
-                      name="chef"
-                      placeholder="Enter Coffee Chef"
-                      className="input input-bordered"
-                      required
-                    />
-                  
-                  </div>
-                  <div className="form-control sm:col-span-3">
-                    <label className="label">
-                      <span className="label-text">Supplier</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="supplier"
-                      placeholder="Enter Coffee Supplifer"
+                      name="image"
+                      placeholder="Enter product Image Url"
                       className="input input-bordered"
                       required
                     />
@@ -77,12 +64,30 @@ const AddProduct = () => {
                   </div>
                   <div className="form-control sm:col-span-3">
                     <label className="label">
-                      <span className="label-text">Taste</span>
+                      <span className="label-text"> Product Type </span>
+                    </label>
+                    {/* <input
+                      type="text"
+                      name="type"
+                      placeholder="Enter Product type"
+                      className="input input-bordered"
+                      required
+                    /> */}
+                    <select name="type" id="type" className=" input input-bordered">
+                      <option value="new">New</option>
+                      <option value="used">Used</option>
+                      <option value="recondition">Recondition</option>
+                    </select>
+                  
+                  </div>
+                  <div className="form-control sm:col-span-3">
+                    <label className="label">
+                      <span className="label-text"> Price </span>
                     </label>
                     <input
                       type="text"
-                      name="taste"
-                      placeholder="Enter Coffee Taste"
+                      name="price"
+                      placeholder="Enter Product Price"
                       className="input input-bordered"
                       required
                     />
@@ -90,12 +95,12 @@ const AddProduct = () => {
                   </div>
                   <div className="form-control sm:col-span-3">
                     <label className="label">
-                      <span className="label-text"> Category </span>
+                      <span className="label-text"> Rating </span>
                     </label>
                     <input
                       type="text"
-                      name="category"
-                      placeholder="Enter coffee category"
+                      name="rating"
+                      placeholder="Enter Product Rating"
                       className="input input-bordered"
                       required
                     />
@@ -108,13 +113,13 @@ const AddProduct = () => {
                     <input
                       type="text"
                       name="details"
-                      placeholder="Enter Coffee Details"
+                      placeholder="Insert Short Description"
                       className="input input-bordered"
                       required
                     />
                   
                   </div>
-                  <div className="form-control sm:col-span-6">
+                  {/* <div className="form-control sm:col-span-6">
                     <label className="label">
                       <span className="label-text">Photo</span>
                     </label>
@@ -126,7 +131,7 @@ const AddProduct = () => {
                       required
                     />
                   
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="form-control mt-6">
