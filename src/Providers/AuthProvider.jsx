@@ -14,12 +14,12 @@ import PropTypes from "prop-types";
 // creating context with export
 export const AuthContext = createContext(null);
 
+// Authenticating with Google Service
+const googleAuth = new GoogleAuthProvider();
 // getting auth from firebase
 const auth = getAuth(app);
 
-// Authenticating with Google Service
 
-const googleAuth = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   // setting the states for users and loading time

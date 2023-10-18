@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";git 
 
 function App() {
   return (

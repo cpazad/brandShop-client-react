@@ -2,7 +2,7 @@
 
 const MyCart = () => {
   return (
-    <div>MyCart</div>
+    <div className="bg-base-200 h-screen">MyCart</div>
   )
 }
 

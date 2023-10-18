@@ -18,7 +18,7 @@ const Login = () => {
     console.log(email, password);
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        console.log(result.users);
         navigate(location?.state ? location.state : "/");
         toast("Login Successful");
       })
@@ -32,8 +32,8 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        const user = result.user;
-        console.log(user);
+        const user = result.users;
+        console.log('This is user info:',user);
       })
       .catch((error) => {
         console.error(error);
@@ -72,11 +72,7 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
+               
               </div>
               <div className="form-control mt-3">
                 <button className="btn bg-[#f06426] text-stone-50 hover:text-black">Login</button>
