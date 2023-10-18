@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color:#333;
+}
+.menu li a.active {
+  background: transparent !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
