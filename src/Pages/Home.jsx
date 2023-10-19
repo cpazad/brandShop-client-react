@@ -9,7 +9,7 @@ import FeaturedCar from "../Components/FeaturedCar"
 const Home = () => {
   const [brands, setBrands] = useState([])
   useEffect(()=>{
-    fetch('brands.json')
+    fetch('http://localhost:5000/product')
     .then(res => res.json())
     .then(data => setBrands(data))
   },[])
