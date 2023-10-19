@@ -8,6 +8,7 @@ import Login from "../Pages/Login"
 import Registration from "../Pages/Registration"
 import MyCart from "../Pages/MyCart"
 import ProductDetails from "../Pages/ProductDetails"
+import Test from "../Pages/Test"
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path:"/productdetails",
                 element:<ProductDetails></ProductDetails>
+            },
+            {
+                path:"/test",
+                element: <Test></Test>
             }
            
         ]
