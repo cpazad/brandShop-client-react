@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color:#333;
+  background-color:#113946;
 }
 .menu li a.active {
   background: transparent !important;

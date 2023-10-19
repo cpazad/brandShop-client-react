@@ -23,7 +23,7 @@ const Banner = () => {
             engine of possibilities today.
           </p> */}
           <Link to="/register">
-            <button className="btn bg-[#f06426] text-white border-0 hover:text-black">
+            <button className="btn btn-wide btn-outline rounded-sm  text-white">
               {" "}
               Register{" "}
             </button>
