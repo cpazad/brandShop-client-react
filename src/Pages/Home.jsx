@@ -10,7 +10,7 @@ import FeaturedCar from "../Components/FeaturedCar"
 const Home = () => {
   const [brands, setBrands] = useState([])
   useEffect(()=>{
-    fetch('http://localhost:5000/product')
+    fetch('https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/product')
     .then(res => res.json())
     .then(data => setBrands(data))
   },[])

@@ -18,7 +18,7 @@ const UpadateProduct = () => {
     const rating = form.rating.value;
     const details = form.details.value;
     const updateProduct = { name, brandname, logo, image, type, price, rating, details };
-    fetch(`http://localhost:5000/product/${_id}`,{
+    fetch(`https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/product/${_id}`,{
       method:'PUT',
       headers: {
         'content-type' : 'application/json'
