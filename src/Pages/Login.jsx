@@ -5,7 +5,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -39,6 +39,19 @@ const Login = () => {
         console.error(error);
       });
   };
+
+  const handleGitHubSignIn = () => {
+    signInWithGithub()
+      .then((result) => {
+        const user = result.users;
+        console.log('This is user info:', user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+
 
   return (
     <div>
@@ -87,7 +100,7 @@ const Login = () => {
                 {" "}
                 <FaGoogle></FaGoogle> Google{" "}
               </button>
-              <button className="btn btn-outline w-full">
+              <button onClick={handleGitHubSignIn} className="btn btn-outline w-full">
                 {" "}
                 <FaGithub></FaGithub> GitHub{" "}
               </button>
