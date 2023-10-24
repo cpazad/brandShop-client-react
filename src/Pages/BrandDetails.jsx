@@ -12,7 +12,7 @@ const BrandDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/product")
+    fetch("https://brand-shop-server-a1sdkzu8b-azadur-rahmans-projects.vercel.app/product")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

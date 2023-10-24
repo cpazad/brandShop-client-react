@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile
 } from "firebase/auth";
 import app from "../Firebase/Firebase.config";
 import PropTypes from "prop-types";
@@ -43,6 +44,12 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleAuth);
   };
+  // update the user profile
+  const handleUpdateProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photo
+    })
+}
 
   // Sign Out from the website
   const logOut = () => {
@@ -69,6 +76,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     signInWithGoogle,
     logOut,
+    handleUpdateProfile
   };
   return (
     <AuthContext.Provider value={AuthInfo}> {children}</AuthContext.Provider>

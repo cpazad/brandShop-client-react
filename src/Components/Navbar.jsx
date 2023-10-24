@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import companyLogo from '/yourcar_w.png'
+import companyLogo from "/yourcar_w.png";
 
 const Navbar = () => {
   const { users, logOut } = useContext(AuthContext);
@@ -77,19 +77,21 @@ const Navbar = () => {
         <div className="navbar-end">
           {users && (
             <>
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  {/* <p>{users.email}</p> */}
-                <div className="w-10 rounded-full">
-                  <img src={users.photo} />
-                </div>
-              </label>
+              <div className="flex justify-center items-center">
+                <p>Welcome! {users.displayName}</p>
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={users.photoURL} alt={users.displayName} />
+                  </div>
+                </label>
+              </div>
+
               <Link to="/mycart">
-              <a className="btn btn-sm btn-outline border-white text-white rounded-sm mr-2">
-                {" "}
-                <FaCartArrowDown></FaCartArrowDown>{" "}
-              </a>
+                <a className="btn btn-sm btn-outline border-white text-white rounded-sm mr-2">
+                  {" "}
+                  <FaCartArrowDown></FaCartArrowDown>{" "}
+                </a>
               </Link>
-              
             </>
           )}
           {users ? (

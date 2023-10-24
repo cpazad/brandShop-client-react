@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 
 const Registration = () => {
-  const {createUser}= useContext(AuthContext)
+  const {createUser, handleUpdateProfile}= useContext(AuthContext)
   const location = useLocation()
   const navigate = useNavigate()
     const HandleRegistration = e => {
@@ -22,9 +22,13 @@ const Registration = () => {
         }else{
           createUser( email, password)
           .then(result => {
+            handleUpdateProfile(name, photo)
+            .then(()=>{
               console.log(result.user)
               toast("Registration Successful");
               navigate(location?.state ? location.state : "/");
+
+            })
           })
           .catch(error =>{
               console.error(error)

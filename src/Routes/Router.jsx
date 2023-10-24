@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path:"/updateproduct/:id",
                 element:<UpadateProduct></UpadateProduct>,
-                loader: ({params}) => fetch(`https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/${params.id}`)
+                loader: ({params}) => fetch(`https://brand-shop-server-a1sdkzu8b-azadur-rahmans-projects.vercel.app/product/${params.id}`)
             },
             {
                 path:"/login",
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             {
                 path:"/brand/:brandname",
                 element:<BrandDetails></BrandDetails>,
-                loader:({params})=> fetch(`https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/${params.brandname}`)
+                loader:({params})=> fetch(`https://brand-shop-server-a1sdkzu8b-azadur-rahmans-projects.vercel.app/product/${params.brandname}`)
             }
            
         ]
