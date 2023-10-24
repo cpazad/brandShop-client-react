@@ -5,7 +5,7 @@ const FeaturedCar = () => {
     <div className="hero py-24  bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-96">
-          <h1 className="text-3xl font-bold">
+          <h1 className="text-3xl font-bold text-orange-500">
             Discover the All-New Toyota Crown!
           </h1>
           <p className="py-6">

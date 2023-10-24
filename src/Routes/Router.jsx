@@ -9,6 +9,7 @@ import Registration from "../Pages/Registration"
 import MyCart from "../Pages/MyCart"
 import ProductDetails from "../Pages/ProductDetails"
 import Test from "../Pages/Test"
+import BrandDetails from "../Pages/BrandDetails"
 
 
 const router = createBrowserRouter([
@@ -26,8 +27,9 @@ const router = createBrowserRouter([
                 element:<AddProduct></AddProduct>
             },
             {
-                path:"/updateproduct",
-                element:<UpadateProduct></UpadateProduct>
+                path:"/updateproduct/:id",
+                element:<UpadateProduct></UpadateProduct>,
+                loader: ({params}) => fetch(`https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/${params.id}`)
             },
             {
                 path:"/login",
@@ -48,6 +50,11 @@ const router = createBrowserRouter([
             {
                 path:"/test",
                 element: <Test></Test>
+            },
+            {
+                path:"/brand/:brandname",
+                element:<BrandDetails></BrandDetails>,
+                loader:({params})=> fetch(`https://brand-shop-server-eknwej4dk-azadur-rahmans-projects.vercel.app/${params.brandname}`)
             }
            
         ]

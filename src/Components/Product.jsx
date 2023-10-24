@@ -1,27 +1,32 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
-const Product = () => {
+const Product = ({product}) => {
+  console.log(product)
+  const {_id,brandname,name, image, type, price, rating, details} = product
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl rounded">
-        <figure className="pl-5">
-          <img className="w-48" src="toyota_Axios.jpg" alt="Movie" />
+        <figure className="pl-5 w-2/5">
+          <img className="w-48" src={image} alt="Movie" />
         </figure>
-        <div className="card-body text-left">
-          <h2 className="card-title"> Toyota Corola </h2>
-          <p> Type: Recondition </p>
-          <p> Price: 18 Lakh </p>
-          <p> Details: The Old Man and the sea </p>
+        <div className="card-body w-3/5 text-left">
+          <h2 className="card-title"> {name} </h2>
+          <h3 className="text-md font-bold uppercase text-themeorange"> {brandname} </h3>
+          <p> Type: {type} </p>
+          <p> Price: {price} Lakh </p>
+          <p> Rating: {rating}/10 </p>
+          {/* <p> Details: {details} </p> */}
           <div className="card-actions justify-start">
             <Link to="/productdetails">
-              <button className="btn btn-sm btn-outline btn-warning rounded-sm">
+              <button className="btn btn-sm btn-outline text-themeorange rounded-sm">
                 {" "}
                 Details{" "}
               </button>
             </Link>
 
-            <Link to="/updateproduct">
-              <button className="btn btn-sm btn-outline btn-warning rounded-sm">
+            <Link to={`/updateproduct/${_id}`}>
+              <button className="btn btn-sm btn-outline text-themeorange rounded-sm">
                 {" "}
                 Update{" "}
               </button>
@@ -34,3 +39,6 @@ const Product = () => {
 };
 
 export default Product;
+Product.propTypes= {
+  product:PropTypes.object
+}

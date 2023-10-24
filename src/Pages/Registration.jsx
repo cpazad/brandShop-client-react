@@ -13,13 +13,14 @@ const Registration = () => {
         const formData = new FormData(e.currentTarget)
         const name = formData.get('name')
         const email = formData.get('email')
+        const photo = formData.get('photo')
         const password = formData.get('password')
-        console.log(name, email, password)
+        console.log(name, email, password, photo)
 
         if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
           toast.error("Minimum six characters, at least one letter, one number and one special character");
         }else{
-          createUser(email, password)
+          createUser( email, password)
           .then(result => {
               console.log(result.user)
               toast("Registration Successful");

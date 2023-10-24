@@ -1,17 +1,24 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const Brands = ({brand}) => {
-    const {brandname, logo } = brand
+const Brands = ({ brand }) => {
+  const { _id, brandname, logo } = brand;
   return (
-    <div className="card p-5 bg-base-100 rounded-sm flex flex-col justify-center items-center">
-        <img className="w-24" src={logo} alt="car" />
-        <h3 className="text-2xl font-bold uppercase"> {brandname} </h3>
-    </div>
-  )
-}
+    <>
+      <Link to={`/brand/${_id}`}>
+        <div className="card p-10 bg-stone-200 rounded-sm flex flex-col justify-center items-center ">
+          <figure className="w-24">
+            <img className="w-full" src={logo} alt="car" />
+          </figure>
+          <h3 className="text-2xl font-bold uppercase mt-4"> {brandname} </h3>
+        </div>
+      </Link>
+    </>
+  );
+};
 
-export default Brands
+export default Brands;
 
 Brands.propTypes = {
-    brand:PropTypes.object
-}
+  brand: PropTypes.object,
+};

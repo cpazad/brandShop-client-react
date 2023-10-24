@@ -6,6 +6,7 @@ import FeaturedCar from "../Components/FeaturedCar"
 
 
 
+
 const Home = () => {
   const [brands, setBrands] = useState([])
   useEffect(()=>{
@@ -18,7 +19,7 @@ const Home = () => {
       <div>
         <Banner></Banner>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 bg-slate-900 p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 bg-slate-50 p-10">
        {
         brands.slice(0,6).map(brand => <Brands key={brand.id} brand={brand}></Brands>)
        }
@@ -27,6 +28,7 @@ const Home = () => {
         <FeaturedCar></FeaturedCar>
       </div>
       <div>
+        
         <Why></Why>
       </div>
     </div>
