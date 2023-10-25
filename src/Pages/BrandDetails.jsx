@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import Slider from "../Components/Slider";
 
 const BrandDetails = () => {
-  const brandnames = useParams();
-  const brandname = brandnames;
-  console.log('Brandname is ',typeof brandname)
-  console.log("What?", brandname);
+  const {brandname} = useParams();
+  console.log(brandname)
+ 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,20 +14,20 @@ const BrandDetails = () => {
     fetch("https://brand-shop-server-a1sdkzu8b-azadur-rahmans-projects.vercel.app/product")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const brandProducts = data.filter((product) => {
-          // console.log("Filtering for:", typeof brandname);
-          // console.log("Product brand:", typeof product.brandname);
+ 
           return product.brandname === brandname;
         });
         console.log("filtered products", brandProducts);
-        setProducts(data);
+        setProducts(brandProducts);
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching products: ", error);
       });
-  }, []);
+  }, [brandname]);
+  console.log(products)
 
   if (loading) {
     return <span className="loading loading-bars loading-lg"></span>;

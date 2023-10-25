@@ -5,7 +5,7 @@ const Brands = ({ brand }) => {
   const { _id, brandname, logo } = brand;
   return (
     <>
-      <Link to={`/brand/${_id}`}>
+      <Link to={`/brand/${brandname}`}>
         <div className="card p-10 bg-stone-200 rounded-sm flex flex-col justify-center items-center ">
           <figure className="w-24">
             <img className="w-full" src={logo} alt="car" />
