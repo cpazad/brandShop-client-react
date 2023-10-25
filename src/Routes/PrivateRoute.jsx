@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContext);
+  const { users, loading } = useContext(AuthContext);
   const location = useLocation()
   if(loading){
     return <span className="loading loading-bars loading-lg"></span>
   }
-  if (user) {
+  if (users) {
     return children;
   }
   return <Navigate state={location.pathname} to="/login"></Navigate>;

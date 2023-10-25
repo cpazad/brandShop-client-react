@@ -14,21 +14,22 @@ const Navbar = () => {
       <li>
         <NavLink to="/"> Home </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink to="/login"> Login </NavLink>
       </li>
       <li>
         <NavLink to="/registration"> Registration </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {users && <>
+        <li>
         <NavLink to="/addproduct"> Add </NavLink>
       </li>
       <li>
         <NavLink to="/updateproduct"> Update </NavLink>
       </li>
-      <li>
-        <NavLink to="/test"> Test </NavLink>
-      </li>
+      </>}
+      
+     
     </>
   );
 

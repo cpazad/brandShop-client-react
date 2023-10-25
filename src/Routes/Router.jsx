@@ -10,6 +10,7 @@ import MyCart from "../Pages/MyCart"
 import ProductDetails from "../Pages/ProductDetails"
 import Test from "../Pages/Test"
 import BrandDetails from "../Pages/BrandDetails"
+import PrivateRoute from "./PrivateRoute"
 
 
 const router = createBrowserRouter([
@@ -24,11 +25,11 @@ const router = createBrowserRouter([
             },
             {
                 path:"/addproduct",
-                element:<AddProduct></AddProduct>
+                element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path:"/updateproduct/:id",
-                element:<UpadateProduct></UpadateProduct>,
+                element:<PrivateRoute><UpadateProduct></UpadateProduct></PrivateRoute>,
                 loader: ({params}) => fetch(`https://brand-shop-server-a1sdkzu8b-azadur-rahmans-projects.vercel.app/product/${params.id}`)
             },
             {
@@ -41,11 +42,12 @@ const router = createBrowserRouter([
             },
             {
                 path:"/mycart",
-                element:<MyCart></MyCart>
+                element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
+                loader: ({params}) => fetch(`https://brand-shop-server-a1sdkzu8b-azadur-rahmans-projects.vercel.app/product/${params.id}`)
             },
             {
-                path:"/productdetails",
-                element:<ProductDetails></ProductDetails>
+                path:"/productdetails/:id",
+                element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
             },
             {
                 path:"/test",

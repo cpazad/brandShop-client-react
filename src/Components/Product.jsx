@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Product = ({product}) => {
   console.log(product)
-  const {_id,brandname,name, image, type, price, rating, details} = product
+  const {_id,brandname,name, image, type, price, rating} = product
   return (
     <div>
       <div className="card card-side bg-base-100 shadow-xl rounded">
@@ -18,7 +18,7 @@ const Product = ({product}) => {
           <p> Rating: {rating}/10 </p>
           {/* <p> Details: {details} </p> */}
           <div className="card-actions justify-start">
-            <Link to="/productdetails">
+            <Link to={`/productdetails/${_id}`}>
               <button className="btn btn-sm btn-outline text-themeorange rounded-sm">
                 {" "}
                 Details{" "}
